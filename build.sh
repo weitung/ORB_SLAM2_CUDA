@@ -6,7 +6,7 @@ cd Thirdparty/DBoW2
 mkdir -p build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
-make -j1
+make -j$(nproc)
 
 cd ../../g2o
 
@@ -15,7 +15,7 @@ echo "Configuring and building Thirdparty/g2o ..."
 mkdir -p build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
-make -j1
+make -j$(nproc)
 
 cd ../../../
 
@@ -29,5 +29,9 @@ echo "Configuring and building ORB_SLAM2 ..."
 
 mkdir -p build
 cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release
-make -j1
+cmake .. \
+	-DCMAKE_BUILD_TYPE=Release \
+	-DPYTHON_EXECUTABLE:FILEPATH=/usr/bin/python3
+	
+make -j$(nproc)
+make install

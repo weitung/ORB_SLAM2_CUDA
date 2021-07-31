@@ -95,6 +95,8 @@ ${PROJECT_SOURCE_DIR}/Thirdparty/g2o/lib/libg2o.so
 nvToolsExt
 )
 
+install(TARGETS ${PROJECT_NAME} DESTINATION lib)
+
 # Build examples
 if(NO_EXAMPLES)
 message(STATUS "Don't build examples")
