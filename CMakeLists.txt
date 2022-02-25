@@ -46,6 +46,7 @@ find_package(Eigen3 3.1.0 REQUIRED)
 find_package(Pangolin REQUIRED)
 
 set(EIGEN3_INCLUDE_DIR /usr/local/include/eigen3)
+add_definitions({EIGEN3_DEFINITIONS})
 
 include_directories(
 ${PROJECT_SOURCE_DIR}
@@ -88,7 +89,6 @@ src/cuda/Cuda.cu
 
 target_link_libraries(${PROJECT_NAME}
 ${OpenCV_LIBS}
-${EIGEN3_LIBS}
 ${Pangolin_LIBRARIES}
 ${PROJECT_SOURCE_DIR}/Thirdparty/DBoW2/lib/libDBoW2.so
 ${PROJECT_SOURCE_DIR}/Thirdparty/g2o/lib/libg2o.so
