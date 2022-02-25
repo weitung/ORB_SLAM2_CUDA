@@ -46,7 +46,7 @@ find_package(Eigen3 3.1.0 REQUIRED)
 find_package(Pangolin REQUIRED)
 
 set(EIGEN3_INCLUDE_DIR /usr/local/include/eigen3)
-add_definitions({EIGEN3_DEFINITIONS})
+add_definitions(${EIGEN3_DEFINITIONS})
 
 include_directories(
 ${PROJECT_SOURCE_DIR}
